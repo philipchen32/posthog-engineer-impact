@@ -1,0 +1,12 @@
+{
+  "name": "posthog-engineer-impact",
+  "version": "1.0.0",
+  "private": true,
+  "description": "90-day engineer impact dashboard for PostHog/posthog — durability, review judgment, review breadth.",
+  "scripts": {
+    "extract": "node scripts/01_extract_commits.js",
+    "fetch-prs": "node scripts/02_fetch_prs.js",
+    "score": "node scripts/03_score.js",
+    "all": "npm run extract && npm run fetch-prs && npm run score"
+  }
+}

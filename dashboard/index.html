@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>PostHog Engineer Impact</title>
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="viz-root">
+    <header class="page-header">
+      <h1>Engineer Impact — PostHog/posthog</h1>
+      <p class="subtitle" id="windowLabel">90-day window</p>
+    </header>
+
+    <section class="methodology" id="methodology">
+      <p id="conceptText" class="concept concept-always"></p>
+      <button class="methodology-toggle" id="methodologyToggle" aria-expanded="false" aria-controls="methodologyBody">
+        <span>Weights, formulas &amp; directory table</span>
+        <svg class="chev" width="14" height="14" viewBox="0 0 14 14" aria-hidden="true"><path d="M3 5l4 4 4-4" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+      <div class="methodology-body" id="methodologyBody" hidden>
+        <div class="method-grid">
+          <div class="method-col">
+            <h3>Weights</h3>
+            <ul class="legend-list" id="weightsList"></ul>
+          </div>
+          <div class="method-col">
+            <h3>Formulas</h3>
+            <dl class="formula-list" id="formulaList"></dl>
+          </div>
+          <div class="method-col">
+            <h3>Directory weights <span class="muted-note">(hand-assigned, inspectable)</span></h3>
+            <table class="dir-table" id="dirTable"><tbody></tbody></table>
+          </div>
+        </div>
+        <div class="limitations" id="limitations">
+          <h3>Known limitations</h3>
+          <ul id="limitationsList"></ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="leaderboard">
+      <h2 class="section-title">Top 5</h2>
+      <div class="cards" id="topCards"></div>
+    </section>
+
+    <section class="context-list">
+      <h2 class="section-title">Also eligible</h2>
+      <table class="context-table" id="contextTable">
+        <thead><tr><th>Engineer</th><th>Total</th><th>Durability</th><th>Judgment</th><th>Breadth</th></tr></thead>
+        <tbody></tbody>
+      </table>
+    </section>
+
+    <footer class="page-footer">
+      <span id="eligibleCount"></span> · generated <span id="generatedAt"></span>
+    </footer>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
